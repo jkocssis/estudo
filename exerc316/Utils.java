@@ -9,5 +9,30 @@ import java.io.*;
 
 
 public class Utils {
+    public static int calculaIdade(String dataNasc, String pattern){
+        DateFormat sdf = new SimpleDateFormat(pattern);
+
+        Date dataNascInput = null;
+
+        try{
+        dataNascInput = sdf.parse(dataNasc);
+
+        }catch(Exception e){}
+
+        Calendar dateOfBirth = new GregorianCalendar();
+
+        dateOfBirth.setTime(dataNascInput);
+
+        Calendar today = Calendar.getInstance();
+
+        int age = today.get(Calendar.YEAR) - dateOfBirth.get(Calendar.YEAR);
+
+        dateOfBirth.add(Calendar.YEAR, age);
+
+        if (today.before(dateOfBirth)) {
+            age--;
+        }
+        return age;
+    }
     
 }
