@@ -3,13 +3,30 @@ import java.util.Scanner;
 public class testAccount {
 
     public static void main(String[] args) {
-        Account conta1 = new Account("Zé das Couver") ;
-        Account conta2 = new Account("Maria das Graças");
+        Scanner entre = new Scanner(System.in);
+        Account conta1 = new Account("Zé das Couves", 9.0) ;
+        Account conta2 = new Account("Maria das Graças", -6.0);
 
-        System.out.printf("conta 1 é: %s%n",
-            conta1.getNome());
-        System.out.printf("conta 1 é: %s%n",
-            conta2.getNome());
+        //exibe os saldos
+        mostraConta(conta1);
+        mostraConta(conta2);
+        
+        
+        System.out.println("Digite o aporte para a conta1: ");
+        double quantia = entre.nextDouble();
+        conta1.deposito(quantia);
+
+        System.out.println("Digite o aporte para a conta2: ");
+        quantia = entre.nextDouble();
+        conta2.deposito(quantia);
+
+        mostraConta(conta1);
+        mostraConta(conta2);        
+        
     }
+    public static void mostraConta(Account contaMostra){
+        System.out.printf("%s balanço: R$%.2f %n",
+            contaMostra.getNome(), contaMostra.getBal());
+         }
     
 }
