@@ -1,0 +1,3 @@
+frequencia cardiaca maxima por minuto (FCM) = 220 - idade(anos)
+frequencia cardiaca alvo  (FCA) = (50%)0,50 * FCM, (80%)0,80 * FCM
+FCA50 e FCA80 
