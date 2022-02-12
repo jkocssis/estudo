@@ -4,6 +4,8 @@ public class testAccount {
 
     public static void main(String[] args) {
         Scanner entre = new Scanner(System.in);
+
+        //contas são inicializadas
         Account conta1 = new Account("Zé das Couves", 9.0) ;
         Account conta2 = new Account("Maria das Graças", -6.0);
 
